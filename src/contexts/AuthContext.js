@@ -1,8 +1,10 @@
 import { createContext, useContext, useState } from 'react'
+import { getPerfilByIdUsuario } from '../services/perfil.service'
 
 const AuthContext = createContext({
   isAuthenticated: false,
   idUsuario: '',
+  idPerfil:'',
   changeisAthenticated: (valor) => {},
   getAccessToken: () => {},
   saveUser: (userData) => {},
@@ -13,6 +15,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthtenticated] = useState(false)
   const [accessToken, setAccessToken] = useState('')
   const [idUsuario, setIdUsuario] = useState()
+  const [idPerfil, setIdPerfil] = useState(null)
   // const [refreshToken, setRefreshToken] = useState('')
 
   function changeisAthenticated(valor) {
@@ -31,18 +34,22 @@ export const AuthProvider = ({ children }) => {
     return null
   }
 
-  function saveUser(userData) {
+  async function saveUser(userData) {
     setAccessToken(userData.token)
     // setRefreshToken(userData.refreshToken)
     localStorage.setItem('token', JSON.stringify(userData.refreshToken))
     setIsAuthtenticated(true)
     setIdUsuario(userData.idUsuario)
+    const perfil = await getPerfilByIdUsuario(userData.idUsuario)
+    console.log('hola')
+    if (perfil) setIdPerfil(perfil.idPerfil)
   }
   return (
     <AuthContext.Provider
       value={{
         isAuthenticated,
         idUsuario,
+        idPerfil,
         getAccessToken,
         changeisAthenticated,
         saveUser,

@@ -1,5 +1,6 @@
 import './Objeto.css'
-const Objeto = ({ nombre, obervaciones }) => {
+const Objeto = ({ nombre, observaciones }) => {
+  console.log(observaciones)
   return (
     <div className="card__father">
       <div className="card">
@@ -9,7 +10,7 @@ const Objeto = ({ nombre, obervaciones }) => {
         </div>
         <div className="card__back">
           <div className="body__card_back">
-            <p>obervaciones: {obervaciones}</p>
+            <p>obervaciones: {observaciones}</p>
           </div>
         </div>
       </div>

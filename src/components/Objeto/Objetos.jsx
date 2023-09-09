@@ -2,6 +2,7 @@ import './Objetos.css'
 import Objeto from './Objeto'
 
 const Objetos = ({ objetos }) => {
+  console.log(objetos)
   return (
     <div className="container__card">
       {objetos? (
@@ -9,7 +10,7 @@ const Objetos = ({ objetos }) => {
           <Objeto
             key={objeto.idObjeto}
             nombre={objeto.nombre}
-            sexo={objeto.observaciones}
+            observaciones={objeto.observaciones}
           />
         ))
       ) : (

@@ -6,3 +6,12 @@ export const getObjetos = async() => {
         throw new Error('could not fetch');
       }
 }
+
+export const getObjetosByIdPerfil = async(id) => {
+  try {
+      const response = await fetch(`http://localhost:3001/api/objetosByIdPerfil/${id}`)
+      return response.json();
+    } catch {
+      throw new Error('could not fetch');
+    }
+}
