@@ -6,7 +6,6 @@ import './SignUp.css'
 import { createUser } from '../../services/usuario.service';
 
 const SignUp = () => {
-  const { setCurrentUser } = useContext(UserContext)
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate()
 
@@ -28,9 +27,9 @@ const SignUp = () => {
 
   return (
     <div className='signupFrm'>
-       <div class="wrapper">
+       <div className="wrapper">
       <form className='form' onSubmit={handleSubmit(onSubmit)}>
-      <h1 className="title">Sign up...</h1>
+      <h1 className="title">Registar</h1>
       <div className="inputContainer">
         <input
           className='input'
@@ -41,7 +40,7 @@ const SignUp = () => {
             }
           )
         } />
-        <label for="" className="label">Email</label>
+        <label htmlFor="" className="label">Email</label>
                 
         </div>
         <div className="inputContainer">
@@ -57,10 +56,10 @@ const SignUp = () => {
             )
           }
         />
-       <label for="" className="label">Password</label>
+       <label htmlFor="" className="label">Password</label>
        
         </div>
-         <button className='submitBtn' type='submit'>Sign Up</button>
+         <button className='submitBtn' type='submit'>Registrar</button>
       </form>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { authUser } from '../../services/usuario.service'
 import { useAuth } from '../../contexts/AuthContext'
 
 const SignIn = () => {
-  const { setCurrentUser } = useContext(UserContext)
+  // const { setCurrentUser } = useContext(UserContext)
   const {
     register,
     handleSubmit,
@@ -25,7 +25,7 @@ const SignIn = () => {
         const json = await response.json()
         if (json.token && json.refreshToken) {
           auth.saveUser(json)
-          navigate('/')
+          navigate('/home')
         }
       }
     } catch (error) {
@@ -38,9 +38,9 @@ const SignIn = () => {
 
   return (
     <div className="signupFrm">
-      <div class="wrapper">
+      <div className="wrapper">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="title">Sign in...</h1>
+          <h1 className="title">Inicia Sesión para acceder a mas funcionalidades!!!.</h1>
           <div className="inputContainer">
             <input
               className="input"
@@ -50,7 +50,7 @@ const SignIn = () => {
                 required: ' ',
               })}
             />
-            <label for="" className="label">
+            <label htmlFor="" className="label">
               Email
             </label>
           </div>
@@ -63,12 +63,12 @@ const SignIn = () => {
                 required: ' ',
               })}
             />
-            <label for="" className="label">
+            <label htmlFor="" className="label">
               Password
             </label>
           </div>
           <button className="submitBtn" type="submit">
-            Sign Up
+            Iniciar Sesión
           </button>
         </form>
       </div>

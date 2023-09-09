@@ -11,6 +11,7 @@ import { ProtectedRoute } from './routes/ProtectedRoute'
 import PanelMascota from './routes/PanelMascota/PanelMascota'
 import PanelObjeto from './routes/PanelObjeto/PanelObjeto'
 import { AuthProvider } from './contexts/AuthContext'
+import Home from './routes/Home/Home'
 
 const router = createBrowserRouter([
   {
@@ -18,11 +19,15 @@ const router = createBrowserRouter([
     element: <Navigation />,
     children: [
       {
-        path: '/signUp',
+        path: '/home',
+        element: <Home />,
+      },
+      {
+        path: '/signup',
         element: <SignUp />,
       },
       {
-        path: '/signIn',
+        path: '/signin',
         element: <SignIn />,
       },
       {

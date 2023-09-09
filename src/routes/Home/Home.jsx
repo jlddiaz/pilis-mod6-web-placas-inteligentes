@@ -1,22 +1,29 @@
 import './Home.css'
-import Mascotas from '../../components/Mascota/Mascotas'
-import { useEffect, useState } from 'react'
-import { getMascotas } from '../../services/mascota.service.js'
+import huella from '../../assets/image/huellas3.png'
 
 const Home = () => {
-  const [mascotas, setMascotas] = useState([])
-  useEffect(() => {
-    getMascotas()
-      .then((data) => setMascotas(data))
-      .catch((err) => console.log(err))
-    console.log(mascotas)
-  }, [])
   return (
     <>
       <div className="main-container">
-        <Mascotas 
-          mascotas={mascotas}
-        />
+      <section>
+      <div id="showcase">
+        <div className="container">
+          <div className="showcase-text">
+            <h1>
+              <span className="title-one">Siguiendo huellas</span><br />
+          <span className="title-two">Pioneros en la identificación de mascotas y objetos con la tecnología QR. </span><br />
+              </h1>
+            
+                            
+          </div>
+          <div className="showcase-img">
+            <img src={huella} alt="showcase"/>
+            
+          </div>        
+          
+        </div>
+      </div>
+    </section>
       </div>
     </>
   )

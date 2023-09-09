@@ -2,16 +2,22 @@ import { createContext, useContext, useState } from 'react'
 
 const AuthContext = createContext({
   isAuthenticated: false,
+  idUsuario: '',
+  changeisAthenticated: (valor) => {},
   getAccessToken: () => {},
   saveUser: (userData) => {},
-  getRefreshToken: () => {}
+  getRefreshToken: () => {},
 })
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthtenticated] = useState(false)
   const [accessToken, setAccessToken] = useState('')
+  const [idUsuario, setIdUsuario] = useState()
   // const [refreshToken, setRefreshToken] = useState('')
 
+  function changeisAthenticated(valor) {
+    setIsAuthtenticated(valor)
+  }
   function getAccessToken() {
     return accessToken
   }
@@ -30,10 +36,18 @@ export const AuthProvider = ({ children }) => {
     // setRefreshToken(userData.refreshToken)
     localStorage.setItem('token', JSON.stringify(userData.refreshToken))
     setIsAuthtenticated(true)
+    setIdUsuario(userData.idUsuario)
   }
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, getAccessToken, saveUser, getRefreshToken }}
+      value={{
+        isAuthenticated,
+        idUsuario,
+        getAccessToken,
+        changeisAthenticated,
+        saveUser,
+        getRefreshToken,
+      }}
     >
       {children}
     </AuthContext.Provider>

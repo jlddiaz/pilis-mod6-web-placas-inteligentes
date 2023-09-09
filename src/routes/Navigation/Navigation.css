@@ -2,8 +2,9 @@
 .navigation {
     height: 150px;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     margin-bottom: 25px;
+    margin-right: 50px;
     border-radius: 10px;
   }
   
