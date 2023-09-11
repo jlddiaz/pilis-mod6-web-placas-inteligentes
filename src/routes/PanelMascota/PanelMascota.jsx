@@ -8,7 +8,6 @@ const PanelMascota = () => {
   const [mascotas, setMascotas] = useState([])
   const auth = useAuth()
   useEffect(() => {
-    console.log(auth.idPerfil)
     if (auth.idPerfil) {
       getMascotasByIdPerfil(auth.idPerfil)
         .then((data) => setMascotas(data))

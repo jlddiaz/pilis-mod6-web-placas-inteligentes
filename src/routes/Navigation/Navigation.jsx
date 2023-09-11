@@ -1,9 +1,6 @@
-import { useContext, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
-import weatherLogo from '../../assets/image/logo.png'
 import huellas3 from '../../assets/image/huellas3.png'
-import mascotas from '../../assets/image/mascotas.png'
 import imagen_whatsapp from '../../assets/image/whatsapp.png'
 import facebook from '../../assets/image/facebook.png'
 import twitter from '../../assets/image/twitter.png'
@@ -29,11 +26,31 @@ const Navigation = () => {
               <li>
                 <a href="#aplicacion">Aplicación</a>
               </li>
-
+              <li>
+                <a href="#contacto">Contacto</a>
+              </li>
               {auth.isAuthenticated ? (
-                <span className="nav-link sign-in" onClick={handleSignOut}>
-                  Cerrar Sesión
-                </span>
+                <>
+                  <li>
+                    <Link className="nav-link" to="/mascotas">
+                      Mascotas
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="nav-link" to="/objetos">
+                      Objetos
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      href="/"
+                      className="nav-link sign-in"
+                      onClick={handleSignOut}
+                    >
+                      Cerrar Sesión
+                    </a>
+                  </li>
+                </>
               ) : (
                 <>
                   <li>
@@ -48,27 +65,12 @@ const Navigation = () => {
                   </li>
                 </>
               )}
-
-              <li>
-                <a href="#contacto">Contacto</a>
-              </li>
             </ul>
           </div>
         </nav>
-
-        {auth.isAuthenticated && (
-          <>
-            <Link className="nav-link" to="/mascotas">
-              Mascotas
-            </Link>
-            <Link className="nav-link" to="/objetos">
-              Objetos
-            </Link>
-          </>
-        )}
       </header>
       <Outlet />
-      {/* <section id="home">
+      <section id="home">
         <div id="showcase">
           <div className="container">
             <div className="showcase-text">
@@ -221,10 +223,9 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   )
 }
 
 export default Navigation
-;<Outlet />

@@ -41,7 +41,6 @@ export const AuthProvider = ({ children }) => {
     setIsAuthtenticated(true)
     setIdUsuario(userData.idUsuario)
     const perfil = await getPerfilByIdUsuario(userData.idUsuario)
-    console.log('hola')
     if (perfil) setIdPerfil(perfil.idPerfil)
   }
   return (

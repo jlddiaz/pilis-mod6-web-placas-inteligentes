@@ -13,12 +13,13 @@ const SignUp = () => {
   const onSubmit = async(data) => {
     try {
       const response = await createUser(data)   
-      console.log(response)
+      // console.log(response)
       if (response.ok){
         console.log(response)
-      }   
+      } 
+      // console.log(response)  
     } catch (error) {
-      console.log(error)      
+      console.log(JSON.parse(error))    
     }    
     // localStorage.setItem('currentUser', JSON.stringify(data))
     // setCurrentUser(data)

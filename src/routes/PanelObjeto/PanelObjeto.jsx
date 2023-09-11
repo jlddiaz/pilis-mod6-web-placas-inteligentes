@@ -8,7 +8,6 @@ const PanelObjeto = () => {
   const [objetos, setObjetos] = useState([])
   const auth = useAuth()
   useEffect(() => {
-    console.log(auth.idPerfil)
     if (auth.idPerfil) {
       getObjetosByIdPerfil(auth.idPerfil)
         .then((data) => setObjetos(data))
