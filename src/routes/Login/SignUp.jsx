@@ -1,29 +1,33 @@
-import { useContext } from 'react';
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../contexts/UserContext';
 import './SignUp.css'
 import { createUser } from '../../services/usuario.service';
+import { useState } from 'react';
 
 const SignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate()
-
+ const [errores, setErrores] = useState([])
   /* Local Storage */
   const onSubmit = async(data) => {
-    try {
+    // try {
       const response = await createUser(data)   
-      // console.log(response)
       if (response.ok){
-        console.log(response)
-      } 
-      // console.log(response)  
-    } catch (error) {
-      console.log(JSON.parse(error))    
-    }    
+        console.log(response.json())
+        navigate('/')
+      }else{
+        console.log('errores')
+        const arrayErr = await response.json()
+        setErrores(arrayErr.errors)
+        console.log(errores)
+      }
+      // console.log(response.errors[1])  
+    // } catch (error) {
+    //   console.log(error)    
+    // }    
     // localStorage.setItem('currentUser', JSON.stringify(data))
     // setCurrentUser(data)
-    navigate('/')
+    
   }
 
   return (
@@ -31,6 +35,7 @@ const SignUp = () => {
        <div className="wrapper">
       <form className='form' onSubmit={handleSubmit(onSubmit)}>
       <h1 className="title">Registar</h1>
+      {errores && (errores.map((err)=>(<p>{err.msg}</p>)))}
       <div className="inputContainer">
         <input
           className='input'

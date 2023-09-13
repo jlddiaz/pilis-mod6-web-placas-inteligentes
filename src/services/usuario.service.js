@@ -10,7 +10,8 @@ export const createUser = async ({ mail, password }) => {
         password,
       }),
     })
-    return response.json()
+    
+    return response
   } catch {
     throw new Error('could not fetch')
   }
