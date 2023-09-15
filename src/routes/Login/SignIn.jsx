@@ -1,10 +1,9 @@
-import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../contexts/UserContext'
-import './SignUp.css'
+import './SignIn.css'
 import { authUser } from '../../services/usuario.service'
 import { useAuth } from '../../contexts/AuthContext'
+import { useState } from 'react'
 
 const SignIn = () => {
   // const { setCurrentUser } = useContext(UserContext)
@@ -13,6 +12,7 @@ const SignIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm()
+  const [error, setError] = useState('')
 
   const auth = useAuth()
   const navigate = useNavigate()
@@ -27,20 +27,35 @@ const SignIn = () => {
           auth.saveUser(json)
           navigate('/home')
         }
+      } else {
+        const err = await response.json()
+        setError(err.msg)
       }
     } catch (error) {
       console.log(error)
     }
     // localStorage.setItem('currentUser', JSON.stringify(data))
     // setCurrentUser(data)
-    
+  }
+
+  const handleCancel = () => {
+    navigate('/home')
   }
 
   return (
     <div className="signupFrm">
       <div className="wrapper">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="title">Inicia Sesión para acceder a mas funcionalidades!!!.</h1>
+          <h1 className="title">
+            Inicia Sesión para acceder a mas funcionalidades!!!.
+          </h1>
+          <div className="alert-err">
+            {error && (
+              <>
+                <p className="error">{error}</p>
+              </>
+            )}
+          </div>
           <div className="inputContainer">
             <input
               className="input"
@@ -67,6 +82,9 @@ const SignIn = () => {
               Password
             </label>
           </div>
+          <button className="btnCancel" onClick={handleCancel}>
+            Cancelar
+          </button>
           <button className="submitBtn" type="submit">
             Iniciar Sesión
           </button>

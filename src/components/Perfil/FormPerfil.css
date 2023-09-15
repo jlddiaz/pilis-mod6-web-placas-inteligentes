@@ -1,36 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: #fbfbf5;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.signupFrm {
+.perfilForm {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
-  float: right;
+  width: 100vh;
   
 }
-
-
-.form {
+.formPerfil {
   background-color: #fbfbf5;
-  width: 400px;
+  width: 500px;
   border-radius: 20px;
   padding: 70px 40px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   position: relative;
-  float: right;
-  top: 50px;
+  float: left;
+  top: 100px;
 }
 
-.title {
+.titlePerfil {
   position: relative;
   top: 0px;
   left: 0px;
@@ -45,14 +32,14 @@ body {
   
 }
 
-.inputContainer {
+.inputContainerPerfil {
   position: relative;
   height: 45px;
   width:  90%;
   margin-bottom: 17px;
 }
 
-.input {
+.inputPerfil {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -68,7 +55,7 @@ body {
 }
 
 
-.label {
+.labelPerfil {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -84,7 +71,7 @@ body {
   color: transparent;
 }
 
-.submitBtn {
+.submitBtnPerfil {
   display: flex;
   float: right;
   margin-left: auto;
@@ -98,11 +85,11 @@ body {
   margin-top: 30px;
 }
 
-.submitBtn:hover {
+.submitBtnPerfil:hover {
   background-color: #595250;
   transform: translateY(-2px);
 }
-.btnCancel {
+.btnCancelPerfil {
   display: flex;
   float: left;
   margin-left: auto;
@@ -115,7 +102,7 @@ body {
   font-size: 16px;
   margin-top: 30px;
 }
-.btnCancel:hover{
+.btnCancelPerfil:hover{
   background-color: #d75551;
   color: #fbfbf5;
 }

@@ -12,6 +12,8 @@ import PanelMascota from './routes/PanelMascota/PanelMascota'
 import PanelObjeto from './routes/PanelObjeto/PanelObjeto'
 import { AuthProvider } from './contexts/AuthContext'
 import Home from './routes/Home/Home'
+import Perfil from './routes/Perfil/Perfil'
+import FormPerfil from './components/Perfil/FormPerfil'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
           {
             path: '/objetos',
             element: <PanelObjeto />,
+          },
+          {
+            path: '/perfil',
+            element: <Perfil />,
+          },
+          {
+            path: '/formperfil',
+            element: <FormPerfil />,
           },
         ],
       },

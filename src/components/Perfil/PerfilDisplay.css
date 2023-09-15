@@ -1,0 +1,16 @@
+.container-perfil {
+    width: 50%;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.group{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.group label {
+    color: red;
+}

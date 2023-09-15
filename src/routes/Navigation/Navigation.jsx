@@ -42,6 +42,11 @@ const Navigation = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link className="nav-link" to="/perfil">
+                      Perfil
+                    </Link>
+                  </li>
+                  <li>
                     <a
                       href="/"
                       className="nav-link sign-in"
@@ -70,7 +75,7 @@ const Navigation = () => {
         </nav>
       </header>
       <Outlet />
-      <section id="home">
+      {/* <section id="home">
         <div id="showcase">
           <div className="container">
             <div className="showcase-text">
@@ -187,7 +192,7 @@ const Navigation = () => {
 
               <div className="about-text">
                 <h1>
-                  <span class="title-one">Te esperamos...</span>
+                  <span className="title-one">Te esperamos...</span>
                   <br />
                 </h1>
 
@@ -197,14 +202,14 @@ const Navigation = () => {
                   </a>
 
                   <a href="http://www.twitter.com" target="_blank">
-                    <img class="imagen_social" src={twitter} />{' '}
+                    <img className="imagen_social" src={twitter} />{' '}
                   </a>
 
                   <a href="http://www.facebook.com" target="_blank">
-                    <img class="imagen_social" src={facebook} />{' '}
+                    <img className="imagen_social" src={facebook} />{' '}
                   </a>
                   <a href="https://wa.me/3884130325" target="_blank">
-                    <img class="imagen_social" src={imagen_whatsapp} />{' '}
+                    <img className="imagen_social" src={imagen_whatsapp} />{' '}
                   </a>
                 </div>
               </div>
@@ -223,7 +228,7 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
