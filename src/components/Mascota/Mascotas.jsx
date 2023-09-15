@@ -2,7 +2,7 @@ import Mascota from './Mascota'
 import './Mascotas.css'
 const Mascotas = ({ mascotas }) => {
   return (
-    <div className="container__card">
+    <div className="cards">
       {mascotas? (
         mascotas.map((mascota) => (
           <Mascota

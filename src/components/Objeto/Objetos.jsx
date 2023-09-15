@@ -4,7 +4,7 @@ import Objeto from './Objeto'
 const Objetos = ({ objetos }) => {
   console.log(objetos)
   return (
-    <div className="container__card">
+    <div className="objetos">
       {objetos? (
         objetos.map((objeto) => (
           <Objeto

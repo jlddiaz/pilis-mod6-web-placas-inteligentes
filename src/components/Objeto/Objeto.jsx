@@ -2,19 +2,13 @@ import './Objeto.css'
 const Objeto = ({ nombre, observaciones }) => {
   console.log(observaciones)
   return (
-    <div className="card__father">
-      <div className="card">
-        <div className="bg"></div>
-        <div className="body__card_front">
-          <h1 className="titleFront">{nombre}</h1>
-        </div>
-        <div className="card__back">
-          <div className="body__card_back">
-            <p>obervaciones: {observaciones}</p>
+    <div class="card-objeto">
+          <h2 class="card-objeto-title"> {nombre} </h2>
+     
+       
+            <p class='card-objeto-desc'> {observaciones}</p>
           </div>
-        </div>
-      </div>
-    </div>
+        
   )
 }
 export default Objeto
