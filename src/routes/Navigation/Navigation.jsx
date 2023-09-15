@@ -1,11 +1,13 @@
 import { Link, Outlet } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import huellas3 from '../../assets/image/huellas3.png'
+import nosotros from '../../assets/image/nosotros.png'
 import imagen_whatsapp from '../../assets/image/whatsapp.png'
 import facebook from '../../assets/image/facebook.png'
 import twitter from '../../assets/image/twitter.png'
 import instagram from '../../assets/image/instagram.png'
 import final from '../../assets/image/final.png'
+import imagen_linkedin from '../../assets/image/linkedin.png'
 import './Navigation.css'
 
 const Navigation = () => {
@@ -97,7 +99,7 @@ const Navigation = () => {
         <div id="about">
           <div className="container">
             <div className="about-img">
-              <img src={final} alt="showcase" />
+              <img src={nosotros} alt="showcase" />
             </div>
             <div className="about-text">
               <h1>
@@ -187,9 +189,20 @@ const Navigation = () => {
 
               <div className="about-text">
                 <h1>
-                  <span class="title-one">Te esperamos...</span>
+                  <span class="title-one"> Póngase en contacto con nosotros</span>
+                  </h1>
+                  
+                  <p id="about-text-p"> 
+                  Por favor, siéntase libre de buscar las respuestas en nuestra Página, 
+                  lo más probable es que su consulta sea resuelta de inmediato.
+                  </p>
+                  <p id="about-text-p">
+De lo contrario, contáctenos haciendo clic en los íconos de nuestras redes sociales. 
+              </p>
+
+
                   <br />
-                </h1>
+                
 
                 <div className="sociales-container">
                   <a href="http://www.instagram.com" target="_blank">
@@ -205,24 +218,28 @@ const Navigation = () => {
                   </a>
                   <a href="https://wa.me/3884130325" target="_blank">
                     <img class="imagen_social" src={imagen_whatsapp} />{' '}
+                    <a href="https://ar.linkedin.com/" target="_blank">
+                    <img class="imagen_social" src={imagen_linkedin} />{' '}
+                  </a>
                   </a>
                 </div>
+                <span className="sociales-p">
+               
+               San Salvador de Jujuy - Jujuy - Argentina -Teléfono: 3884123456
+             </span>
               </div>
 
               <br></br>
-              <div>
-                <span className="sociales-p">
-                  {' '}
-                  San Salvador de Jujuy - Jujuy - Argentina
-                </span>
+             
+              
                 <br></br>
 
                 <br />
-                <span className="sociales-p">Teléfono de contacto</span>
+             
               </div>
             </div>
           </div>
-        </div>
+        
       </section>
     </>
   )

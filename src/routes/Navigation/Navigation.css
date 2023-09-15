@@ -288,7 +288,7 @@ form .label-text
 }
 .sociales-container{
   display: flex;
-  top: 20px;
+  top: 70px;
   justify-content: center; 
 }
 .sociales-img {
@@ -305,23 +305,23 @@ form .label-text
 
 }
 .sociales-p{
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 300;
    text-transform: uppercase;
    color: #FFF;
    text-decoration: none;
-   padding-top: 60px;
+   padding-top: 20px;
    padding-bottom: 60;
 
 }
 .imagen_social
 {
- width:100px;
- height:100px;
+ width:60px;
+ height:60px;
  float: right; 
  margin-top: 100px;
  margin-bottom: 100px;
- margin-right: 50px;
+ margin-right: 30px;
 
  
   }
