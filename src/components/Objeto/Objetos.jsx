@@ -11,6 +11,7 @@ const Objetos = ({ objetos }) => {
             key={objeto.idObjeto}
             nombre={objeto.nombre}
             observaciones={objeto.observaciones}
+            foto={objeto.foto}
           />
         ))
       ) : (

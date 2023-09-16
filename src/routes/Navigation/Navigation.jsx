@@ -7,7 +7,6 @@ const Navigation = () => {
   const handleSignOut = () => {
     auth.changeisAthenticated(false)
   }
-  /* Local Storage */
   return (
     <>
       <header id="mainheader">

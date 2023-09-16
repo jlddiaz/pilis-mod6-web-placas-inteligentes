@@ -18,6 +18,7 @@ export const ObjetoView = () => {
         nombre={objeto.nombre}
         foto={objeto.foto}
         observaciones={objeto.observaciones}
+        perfil={objeto.perfil}
       />
     )
   )
