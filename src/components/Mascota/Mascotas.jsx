@@ -9,6 +9,8 @@ const Mascotas = ({ mascotas }) => {
             key={mascota.idMascota}
             nombre={mascota.nombre}
             sexo={mascota.sexo}
+            vacunas={mascota.vacunas}
+            observaciones={mascota.observaciones}
           />
         ))
       ) : (
