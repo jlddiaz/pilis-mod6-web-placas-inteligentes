@@ -9,7 +9,7 @@ import {
   getProvincias,
 } from '../../services/provincia.service'
 import { getDepartamentoById } from '../../services/departamento.service'
-
+import { FiSave } from "react-icons/fi";
 const FormPerfil = ({
   nombre,
   apellido,
@@ -37,7 +37,7 @@ const FormPerfil = ({
       ...data,
       idUsuario: auth.idUsuario,
       idLocalidad: data.localidad,
-      idPerfil: auth.idPerfil
+      idPerfil: auth.idPerfil,
     }
     console.log(perfil)
     if (isInitialState) {
@@ -51,7 +51,7 @@ const FormPerfil = ({
         setErrores(arrayErr.errors)
         console.log(errores)
       }
-    }else{
+    } else {
       const response = await updatePerfil(perfil)
       if (response.ok) {
         // console.log(response.json())
@@ -89,160 +89,165 @@ const FormPerfil = ({
       .then((err) => console.log(err))
   }, [])
   return (
-    <div className="perfilForm">
+    <div className="form-perfil-container">
       <div className="wrapper">
         <form className="formPerfil" onSubmit={handleSubmit(onSubmit)}>
           <h1 className="titlePerfil">Actualizar Perfil</h1>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="text"
-              defaultValue={nombre}
-              placeholder="nombre"
-              {...register('nombre', {
-                required: ' ',
-              })}
-            />
-            <label htmlFor="" className="label">
-              Nombre
-            </label>
+          <div className="input-group-perfil">
+            <div className="input-container-perfil">
+              <input
+                className="input"
+                type="text"
+                defaultValue={nombre}
+                placeholder="nombre"
+                {...register('nombre', {
+                  required: ' ',
+                })}
+              />
+              <label htmlFor="" className="label">
+                Nombre
+              </label>
+            </div>
+            <div className="input-container-perfil">
+              <input
+                className="input"
+                type="text"
+                defaultValue={apellido}
+                placeholder="apellido"
+                {...register('apellido', {
+                  required: ' ',
+                })}
+              />
+              <label htmlFor="" className="label">
+                Apellido
+              </label>
+            </div>
+            <div className="input-container-perfil">
+              <input
+                className="input"
+                type="text"
+                defaultValue={direccion}
+                placeholder="direccion"
+                {...register('direccion', {
+                  required: ' ',
+                })}
+              />
+              <label htmlFor="" className="label">
+                Direccion
+              </label>
+            </div>
           </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="text"
-              defaultValue={apellido}
-              placeholder="apellido"
-              {...register('apellido', {
-                required: ' ',
-              })}
-            />
-            <label htmlFor="" className="label">
-              Apellido
-            </label>
+          <div className="input-group-perfil">
+            <div className="input-container-perfil">
+              <select
+                {...register('provincia')}
+                className="input"
+                onChange={changeProvincia}
+              >
+                <option>Seleccionar opción</option>
+                {provincias.length > 0
+                  ? provincias.map((provincia) => {
+                      return (
+                        <option
+                          value={provincia.idProvincia}
+                          key={provincia.idProvincia}
+                        >
+                          {provincia.descripcion}
+                        </option>
+                      )
+                    })
+                  : ''}
+              </select>
+              <label htmlFor="" className="label">
+                Provincia
+              </label>
+            </div>
+            <div className="input-container-perfil">
+              <select
+                {...register('departamento')}
+                className="input"
+                onChange={changeDepartamento}
+              >
+                <option>Seleccionar opción</option>
+                {departamentos.length > 0
+                  ? departamentos.map((departamento) => {
+                      return (
+                        <option
+                          value={departamento.idDepartamento}
+                          key={departamento.idDepartamento}
+                        >
+                          {departamento.descripcion}
+                        </option>
+                      )
+                    })
+                  : ''}
+              </select>
+              <label htmlFor="" className="label">
+                Departamento
+              </label>
+            </div>
+            <div className="input-container-perfil">
+              <select {...register('localidad')} className="input">
+                <option>Seleccionar opción</option>
+                {localidades.length > 0
+                  ? localidades.map((localidad) => {
+                      return (
+                        <option
+                          value={localidad.idLocalidad}
+                          key={localidad.idLocalidad}
+                        >
+                          {localidad.descripcion}
+                        </option>
+                      )
+                    })
+                  : ''}
+              </select>
+              <label htmlFor="" className="label">
+                Localidad
+              </label>
+            </div>
           </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="text"
-              defaultValue={direccion}
-              placeholder="direccion"
-              {...register('direccion', {
-                required: ' ',
-              })}
-            />
-            <label htmlFor="" className="label">
-              Direccion
-            </label>
+          <div className="input-group-perfil">
+            <div className="input-container-perfil">
+              <input
+                className="input"
+                type="telefono"
+                defaultValue={telefono}
+                placeholder="telefono"
+                {...register('telefono', {
+                  required: ' ',
+                })}
+              />
+              <label htmlFor="" className="label">
+                Telefono
+              </label>
+            </div>
+            <div className="input-container-perfil">
+              <input
+                className="input"
+                type="text"
+                defaultValue={foto}
+                placeholder="foto"
+                {...register('foto')}
+              />
+              <label htmlFor="" className="label">
+                Foto
+              </label>
+            </div>
+            <div className="input-container-perfil">
+              <input
+                className="input"
+                type="text"
+                defaultValue={facebook}
+                placeholder="facebook"
+                {...register('facebook')}
+              />
+              <label htmlFor="" className="label">
+                Facebook
+              </label>
+            </div>
           </div>
-          <div className="inputContainer">
-            <select
-              {...register('provincia')}
-              className="input"
-              onChange={changeProvincia}
-            >
-              <option>Seleccionar opción</option>
-              {provincias.length > 0
-                ? provincias.map((provincia) => {
-                    return (
-                      <option
-                        value={provincia.idProvincia}
-                        key={provincia.idProvincia}
-                      >
-                        {provincia.descripcion}
-                      </option>
-                    )
-                  })
-                : ''}
-            </select>
-            <label htmlFor="" className="label">
-              Provincia
-            </label>
-          </div>
-          <div className="inputContainer">
-            <select
-              {...register('departamento')}
-              className="input"
-              onChange={changeDepartamento}
-            >
-              <option>Seleccionar opción</option>
-              {departamentos.length > 0
-                ? departamentos.map((departamento) => {
-                    return (
-                      <option
-                        value={departamento.idDepartamento}
-                        key={departamento.idDepartamento}
-                      >
-                        {departamento.descripcion}
-                      </option>
-                    )
-                  })
-                : ''}
-            </select>
-            <label htmlFor="" className="label">
-              Departamento
-            </label>
-          </div>
-
-          <div className="inputContainer">
-            <select {...register('localidad')} className="input">
-              <option>Seleccionar opción</option>
-              {localidades.length > 0
-                ? localidades.map((localidad) => {
-                    return (
-                      <option
-                        value={localidad.idLocalidad}
-                        key={localidad.idLocalidad}
-                      >
-                        {localidad.descripcion}
-                      </option>
-                    )
-                  })
-                : ''}
-            </select>
-            <label htmlFor="" className="label">
-              Localidad
-            </label>
-          </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="telefono"
-              defaultValue={telefono}
-              placeholder="telefono"
-              {...register('telefono', {
-                required: ' ',
-              })}
-            />
-            <label htmlFor="" className="label">
-              Telefono
-            </label>
-          </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="text"
-              defaultValue={foto}
-              placeholder="foto"
-              {...register('foto')}
-            />
-            <label htmlFor="" className="label">
-              Foto
-            </label>
-          </div>
-          <div className="inputContainer">
-            <input
-              className="input"
-              type="text"
-              defaultValue={facebook}
-              placeholder="facebook"
-              {...register('facebook')}
-            />
-            <label htmlFor="" className="label">
-              Facebook
-            </label>
-          </div>
-          <div className="inputContainer">
+          <div className="input-container-perfil">
             <input
               className="input"
               type="text"
@@ -255,7 +260,8 @@ const FormPerfil = ({
             </label>
           </div>
           <button className="submitBtn" type="submit">
-            Registrar
+          <FiSave/>
+            Actualizar
           </button>
         </form>
       </div>

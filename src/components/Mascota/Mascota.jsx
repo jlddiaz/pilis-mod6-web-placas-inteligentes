@@ -1,5 +1,5 @@
 import './Mascota.css'
-const Mascota = ({ nombre, sexo }) => {
+const Mascota = ({ nombre, sexo, vacunas, fechaNacimiento, foto, observaciones }) => {
   return (
     <div className="card__father">
       <div className="card">

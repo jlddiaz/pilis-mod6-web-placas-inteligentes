@@ -1,48 +1,4 @@
-// import { useAuth } from '../../contexts/AuthContext'
-// import { getPerfilById } from '../../services/perfil.service.js'
-// import { useEffect, useState } from 'react'
-// import './Perfil.css'
-// import PerfilDisplay from '../../components/Perfil/PerfilDisplay'
-// import { Link } from 'react-router-dom'
-
-// const Perfil = () => {
-//   const initialStatePerfil = {
-//     nombre: '',
-//     apellido: '',
-//     direccion: '',
-//     foto: '',
-//     instagram: '',
-//     facebook: '',
-//     telefono: '',
-//   }
-//   const [perfilBd, setPerfilBd] = useState(initialStatePerfil)
-//   const auth = useAuth()
-
-//   useEffect(() => {
-//     if (auth.idPerfil) {
-//       getPerfilById(auth.idPerfil)
-//         .then((data) => {
-//           console.log(data.apellido)
-//           setPerfilBd({ ...perfilBd, apellido: data.apellido })
-//           console.log(perfilBd)
-//         })
-//         .catch((err) => console.log(err))
-//     }
-//   }, [])
-//   return (
-//     <>
-//       <div className="main-container">
-//         <PerfilDisplay perfil={perfilBd} />
-//         <Link className="nav-link sign-in" to="/formperfil">
-//           Actualizar Perfil
-//         </Link>
-//       </div>
-//     </>
-//   )
-// }
-
-// export default Perfil
-
+import { BsArrowRepeat } from 'react-icons/bs'
 import './Perfil.css'
 import { useEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
@@ -92,7 +48,10 @@ const Perfil = () => {
           </>
         )}
         {!isUpdate ? (
-          <button onClick={handleUpdate}>Actualizar</button>
+          <button className="btn-perfil" onClick={handleUpdate}>
+            <BsArrowRepeat className='update-icon'/>
+            Actualizar Perfil
+          </button>
         ) : (
           <FormPerfil
             nombre={perfil.nombre}

@@ -14,6 +14,10 @@ import { AuthProvider } from './contexts/AuthContext'
 import Home from './routes/Home/Home'
 import Perfil from './routes/Perfil/Perfil'
 import FormPerfil from './components/Perfil/FormPerfil'
+import { MascotaView } from './routes/PanelMascota/MascotaView'
+import { ObjetoView } from './routes/PanelObjeto/ObjetoView'
+import Aplicacion from './routes/Home/Aplicacion'
+import Contacto from './routes/Home/Contacto'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +29,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: '/aplicacion',
+        element: <Aplicacion/>,
+      },
+      {
+        path: '/contacto',
+        element: <Contacto/>,
+      },
+      {
         path: '/signup',
         element: <SignUp />,
       },
@@ -33,13 +45,21 @@ const router = createBrowserRouter([
         element: <SignIn />,
       },
       {
+        path: '/mascotas/:id',
+        element: <MascotaView />,
+      },
+      {
+        path: '/objetos/:id',
+        element: <ObjetoView />,
+      },
+      {
         path: '/',
         element: <ProtectedRoute />,
         children: [
           {
             path: '/mascotas',
             element: <PanelMascota />,
-          },
+          },          
           {
             path: '/objetos',
             element: <PanelObjeto />,

@@ -1,85 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
-
 /* Reset */
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-font-family: 'Montserrat', sans-serif;
-background: #fbfbf5;
-color:  #595250  ;
-scroll-behavior: smooth;
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fbfbf5;
+  color: #595250;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
-  color:  #d7978e;
+  color: #d7978e;
 }
-.imagen_circular
-{
- width: 90px;
- height: 90px;
- float: right; 
- margin: 10px;
- border-radius:30%;
- -webkit-border-radius:50%;
- box-shadow: 0px 0px 7px 7px #d7978e ;
- -webkit-box-shadow: 0px 0px 7px 7px #dac3bb   ;
- position: fixed;
-  }
+.imagen_circular {
+  width: 90px;
+  height: 90px;
+  float: right;
+  margin: 10px;
+  border-radius: 30%;
+  -webkit-border-radius: 50%;
+  box-shadow: 0px 0px 7px 7px #d7978e;
+  -webkit-box-shadow: 0px 0px 7px 7px #dac3bb;
+  position: fixed;
+}
 
- 
 /*navbar*/
-.logo{
-   float: right;
-   width: 120px;
-   
-  
+.logo {
+  float: right;
+  width: 120px;
 }
 
 #navbar a {
-  color:#d75551 ;
+  color: #d75551;
 }
 
-#navbar ul 
-{
+#navbar ul {
   list-style: none;
   text-transform: uppercase;
   float: left;
 }
-#navbar ul li
-{
+#navbar ul li {
   float: left;
 }
-#navbar ul li a{
+#navbar ul li a {
   display: block;
   padding: 20px;
   text-align: center;
 }
 
-#navbar ul li a:hover{
+#navbar ul li a:hover {
   background-color: #dac3bb;
 }
 
 /* Showcase */
 
 .showcase-img {
-  
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
- 
 }
 
 .showcase-img img {
   width: 60%;
   height: 60%;
-} 
+}
 
 .showcase-text {
   float: left;
@@ -100,28 +91,24 @@ a {
 }
 
 .showcase-text .title-two {
-  color: #d75551 ;
+  color: #d75551;
 }
 
 .showcase-text .large {
   padding-top: 20px;
 }
 /*HOME*/
-#home
-{
+#home {
   height: 100vh;
-  
 }
 
-#expo
-{
+#expo {
   height: 100vh;
 }
 
 /* parte3 */
-header{
+header {
   height: 20vh;
-  
 }
 
 .container {
@@ -129,15 +116,13 @@ header{
   max-width: 1300px;
   overflow: auto;
   padding: 0 10px;
-  
 }
 
 /* About */
-#about
-{
- background:  #d75551 ;
-color: #f3f0ef  ;
-height: 100vh;
+#about {
+  background: #d75551;
+  color: #f3f0ef;
+  height: 100vh;
 }
 .about-text h1 {
   text-transform: uppercase;
@@ -154,7 +139,7 @@ height: 100vh;
   font-weight: 300;
 }
 .about-text .title-two {
-  color:#fafdea;
+  color: #fafdea;
   font-size: 20px;
   float: rigth;
 }
@@ -169,16 +154,14 @@ height: 100vh;
   font-size: 1.25rem;
 }
 .about-img {
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px;
   height: 100vh;
-    
 }
 .about-img {
   float: right;
-    
 }
 .about-text {
   float: rigth;
@@ -186,32 +169,32 @@ height: 100vh;
   padding: 20px 20px 20px 40px;
 }
 /* General */
-h2 { 
-  font-size: 50px; 
+h2 {
+  font-size: 50px;
   text-transform: uppercase;
   font-weight: 300;
-  color: #FFF;
+  color: #fff;
 }
-h3 { 
+h3 {
   font-size: 20px;
   font-weight: 300;
-   text-transform: uppercase;
-   color: #FFF;
-   text-decoration: none;
-   padding-top: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  padding-top: 60px;
 }
 
 p {
-font-size: 1rem;
-margin: 10px 0;
-line-height: 1.7em;
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.7em;
 }
 
 /* Contacto */
 #contact {
   padding: 70px 0;
-  background:  #d75551 ;
-  color:   #f3f0ef  ;
+  background: #d75551;
+  color: #f3f0ef;
   height: 100vh;
 }
 
@@ -222,15 +205,14 @@ line-height: 1.7em;
 }
 
 .contact-title {
- 
   font-weight: 300;
   font-size: 20px;
-   width: 45%;
+  width: 45%;
   padding-top: 30px;
-  text-align: left; 
-  text-decoration-color:  #fafdea;
+  text-align: left;
+  text-decoration-color: #fafdea;
 }
- h1 {
+h1 {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 30px;
@@ -244,14 +226,11 @@ form .form-control {
   padding: 0.375rem 0.7rem;
   font-size: 1rem;
   line-height: 1.7;
-  border: none; 
-
+  border: none;
 }
-form .label-text 
-{
-    font-size: 18px;
-    font-weight: 300;
-    
+form .label-text {
+  font-size: 18px;
+  font-weight: 300;
 }
 /* Boton del formulario*/
 .btn {
@@ -266,9 +245,9 @@ form .label-text
 }
 
 .btn-light {
-  background:#fff;
-  border: 1px solid #d75551 ;
-  color: #d75551 ;
+  background: #fff;
+  border: 1px solid #d75551;
+  color: #d75551;
   width: 100%;
 }
 
@@ -278,50 +257,42 @@ form .label-text
   color: #ccc9aa;
 }
 
-
 /* footer */
 
 #footer {
   margin-top: 2em;
-  background-color: #d75551 ;
-  color: #f3f0ef ;
+  background-color: #d75551;
+  color: #f3f0ef;
 }
-.sociales-container{
+.sociales-container {
   display: flex;
   top: 20px;
-  justify-content: center; 
+  justify-content: center;
 }
 .sociales-img {
   padding-top: 10px;
- 
+
   text-decoration: none;
   margin-right: 30px;
-  }
-.sociales-tex{
-  
+}
+.sociales-tex {
   text-align: center;
   padding-top: 20;
-  
-
 }
-.sociales-p{
+.sociales-p {
   font-size: 18px;
   font-weight: 300;
-   text-transform: uppercase;
-   color: #FFF;
-   text-decoration: none;
-   padding-top: 60px;
-   padding-bottom: 60;
-
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  padding-top: 60px;
+  padding-bottom: 60;
 }
-.imagen_social
-{
- width:100px;
- height:100px;
- float: right; 
- margin-top: 100px;
- margin-bottom: 100px;
- margin-right: 50px;
-
- 
-  }
+.imagen_social {
+  width: 100px;
+  height: 100px;
+  float: right;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 50px;
+}

@@ -1,6 +1,5 @@
 import './Objeto.css'
-const Objeto = ({ nombre, observaciones }) => {
-  console.log(observaciones)
+const Objeto = ({ nombre, observaciones, foto }) => {
   return (
     <div className="card__father">
       <div className="card">
