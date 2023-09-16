@@ -9,7 +9,7 @@ import {
   getProvincias,
 } from '../../services/provincia.service'
 import { getDepartamentoById } from '../../services/departamento.service'
-import { FiSave } from "react-icons/fi";
+import { FiSave } from 'react-icons/fi'
 const FormPerfil = ({
   nombre,
   apellido,
@@ -83,6 +83,9 @@ const FormPerfil = ({
       .then((err) => console.log(err))
     console.log(localidades)
   }
+  const handleCancel = () => {
+    navigate('/home')
+  }
   useEffect(() => {
     getProvincias()
       .then((data) => setProvincias(data))
@@ -91,8 +94,8 @@ const FormPerfil = ({
   return (
     <div className="form-perfil-container">
       <div className="wrapper">
-        <form className="formPerfil" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="titlePerfil">Actualizar Perfil</h1>
+        <form className="form-perfil" onSubmit={handleSubmit(onSubmit)}>
+          <h1 className="title-perfil">Actualizar Perfil</h1>
           <div className="input-group-perfil">
             <div className="input-container-perfil">
               <input
@@ -259,10 +262,15 @@ const FormPerfil = ({
               Instagram
             </label>
           </div>
-          <button className="submitBtn" type="submit">
-          <FiSave/>
+          <div className='btn-container-perfil'>
+          <button className="btn-cancel-form-perfil " onClick={handleCancel}>
+            Cancelar
+          </button>
+          <button className="btn-submit" type="submit">
+            <FiSave />
             Actualizar
           </button>
+          </div>
         </form>
       </div>
     </div>

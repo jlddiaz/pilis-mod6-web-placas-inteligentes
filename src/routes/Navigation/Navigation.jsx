@@ -1,12 +1,18 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import './Navigation.css'
+import { useEffect } from 'react'
 
 const Navigation = () => {
   const auth = useAuth()
+  let navigate = useNavigate();
   const handleSignOut = () => {
     auth.changeisAthenticated(false)
   }
+  useEffect(() => {
+    navigate("/home");
+    
+ },[]);
   return (
     <>
       <header id="mainheader">

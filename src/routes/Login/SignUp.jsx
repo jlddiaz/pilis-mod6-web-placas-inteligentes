@@ -5,14 +5,12 @@ import { createUser } from '../../services/usuario.service'
 import { useState } from 'react'
 
 const SignUp = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
+  const { register, handleSubmit, formState } = useForm()
+  const { errors } = formState
   const navigate = useNavigate()
   const [errores, setErrores] = useState([])
-  /* Local Storage */
+  const [mostrarErr, setMostrarErr] = useState(false)
+
   const onSubmit = async (data) => {
     // try {
     const response = await createUser(data)
@@ -20,17 +18,13 @@ const SignUp = () => {
       console.log(response.json())
       navigate('/')
     } else {
-      console.log('errores')
       const arrayErr = await response.json()
       setErrores(arrayErr.errors)
-      console.log(errores)
+      setMostrarErr(true)
+      setTimeout(() => {
+        setMostrarErr(false)
+      }, 3000)
     }
-    // console.log(response.errors[1])
-    // } catch (error) {
-    //   console.log(error)
-    // }
-    // localStorage.setItem('currentUser', JSON.stringify(data))
-    // setCurrentUser(data)
   }
 
   return (
@@ -38,17 +32,22 @@ const SignUp = () => {
       <div className="wrapper">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <h1 className="title">Registar</h1>
-          <div className="alert-err">
-            {errores &&
-              errores.map((err) => <p className="error">{err.msg}</p>)}
-          </div>
+          {mostrarErr && (
+            <div className="alert-err">
+              {errores &&
+                errores.map((err) => <p className="error">{err.msg}</p>)}
+            </div>
+          )}
           <div className="inputContainer">
             <input
               className="input"
               type="text"
               placeholder="a"
               {...register('mail', {
-                required: ' ',
+                required: {
+                  value: true,
+                  message: 'mail requerido',
+                },
               })}
             />
             <label htmlFor="" className="label">
