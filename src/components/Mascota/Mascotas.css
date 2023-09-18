@@ -1,7 +1,9 @@
-
-.cards {
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
+.container__card{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 0px;
+    perspective: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }

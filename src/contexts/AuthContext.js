@@ -36,7 +36,6 @@ export const AuthProvider = ({ children }) => {
 
   async function saveUser(userData) {
     setAccessToken(userData.token)
-    // setRefreshToken(userData.refreshToken)
     localStorage.setItem('token', JSON.stringify(userData.refreshToken))
     setIsAuthtenticated(true)
     setIdUsuario(userData.idUsuario)

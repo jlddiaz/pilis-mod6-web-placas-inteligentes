@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.showcase-img-aplicacion {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding: 5px;
+  padding-bottom: 0px;
+  
+ 
+}
+
+.showcase-img-aplicacion .img-aplicacion {
+max-width: 80%;
+max-height: 80%;
+} 
+
+.showcase-text-aplicacion {
+  float: left;
+  width: 50%;
+  padding: 20px 20px 20px 40px;
+}
+
+.showcase-text-aplicacion h1 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 46px;
+}
+
+.showcase-text-aplicacion .title-one-aplicacion {
+  font-size: 29px;
+  font-weight: 300;
+  justify-content: left;
+}
+
+.showcase-text-aplicacion .title-two-aplicacion {
+  color: #d75551 ;
+  font-weight: 200;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.showcase-text-aplicacion p {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.6rem;
+ 
+  }
+
+.container-aplicacion {
+  margin: auto;
+  max-width: 1300px;
+  max-height: 800px;
+  overflow: auto;
+  padding: 0 10px;
+  
+}

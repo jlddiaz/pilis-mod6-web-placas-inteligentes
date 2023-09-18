@@ -2,13 +2,15 @@ import Mascota from './Mascota'
 import './Mascotas.css'
 const Mascotas = ({ mascotas }) => {
   return (
-    <div className="cards">
+    <div className="container__card">
       {mascotas? (
         mascotas.map((mascota) => (
           <Mascota
             key={mascota.idMascota}
             nombre={mascota.nombre}
             sexo={mascota.sexo}
+            vacunas={mascota.vacunas}
+            observaciones={mascota.observaciones}
           />
         ))
       ) : (

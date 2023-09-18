@@ -1,23 +1,21 @@
-import { useContext } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../contexts/UserContext'
-import './SignUp.css'
 import { authUser } from '../../services/usuario.service'
 import { useAuth } from '../../contexts/AuthContext'
+import './SignIn.css'
 
 const SignIn = () => {
-  // const { setCurrentUser } = useContext(UserContext)
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
-
+  const [error, setError] = useState('')
+  const [mostrarErr, setMostrarErr] = useState(false)
   const auth = useAuth()
   const navigate = useNavigate()
 
-  /* Local Storage */
   const onSubmit = async (data) => {
     try {
       const response = await authUser(data)
@@ -27,20 +25,35 @@ const SignIn = () => {
           auth.saveUser(json)
           navigate('/home')
         }
+      } else {
+        const err = await response.json()
+        setError(err.msg)
+        setMostrarErr(true)
+        setTimeout(() => {
+          setMostrarErr(false)
+        }, 3000)
       }
     } catch (error) {
       console.log(error)
     }
-    // localStorage.setItem('currentUser', JSON.stringify(data))
-    // setCurrentUser(data)
-    
+  }
+
+  const handleCancel = () => {
+    navigate('/home')
   }
 
   return (
     <div className="signupFrm">
       <div className="wrapper">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="title">Inicia Sesión para acceder a mas funcionalidades!!!.</h1>
+          <h1 className="title">
+            Inicia Sesión para acceder a mas funcionalidades!!!.
+          </h1>
+          {mostrarErr && (
+            <div className="alert-err">
+              {error && <p className="error">{error}</p>}
+            </div>
+          )}
           <div className="inputContainer">
             <input
               className="input"
@@ -67,6 +80,9 @@ const SignIn = () => {
               Password
             </label>
           </div>
+          <button className="btnCancel" onClick={handleCancel}>
+            Cancelar
+          </button>
           <button className="submitBtn" type="submit">
             Iniciar Sesión
           </button>

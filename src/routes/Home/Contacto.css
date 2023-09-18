@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.showcase-img-contacto {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 0px;
+ 
+}
+
+.showcase-img-contacto .img-contacto {
+max-width: 70%;
+max-height: 70%;
+} 
+
+.showcase-text-contacto {
+  float: left;
+  width: 50%;
+  padding: 20px 20px 20px 40px;
+}
+
+.showcase-text-contacto h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 46px;
+}
+
+.showcase-text-contacto p {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.7em;
+  
+  }
+
+ 
+.showcase-text-contacto .title-one-contacto {
+  font-size: 29px;
+  font-weight: 300;
+  justify-content: left;
+}
+
+.showcase-text-contacto .title-two-contacto {
+  color: #d75551 ;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+
+.container-contacto {
+  margin: auto;
+  max-width: 1300px;
+  overflow: auto;
+  padding: 0 10px;
+  
+}
+
+
+
+
+
+
+/* footer */
+
+.sociales-container{
+  display: flex;
+  top: 10px;
+  justify-content: center; 
+}
+
+.imagen_social
+{
+ width:60px;
+ height:60px;
+ float: right; 
+ margin-top: 10px;
+ margin-bottom: 50px;
+ margin-right: 20px;
+
+ 
+  }

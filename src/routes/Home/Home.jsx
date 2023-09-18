@@ -1,30 +1,32 @@
 import './Home.css'
-import huella from '../../assets/image/huellas3.png'
-
+import huellas3 from '../../assets/image/huellas3.png'
+import final from '../../assets/image/final.png'
 const Home = () => {
   return (
     <>
-      <div className="main-container">
-      <section>
-      <div id="showcase">
-        <div className="container">
-          <div className="showcase-text">
-            <h1>
-              <span className="title-one">Siguiendo huellas</span><br />
-          <span className="title-two">Pioneros en la identificación de mascotas y objetos con la tecnología QR. </span><br />
-              </h1>
-            
-                            
+      <section id="home">
+        <div id="showcase">
+          <div className="container-home">
+            <div className="showcase-text-home">
+              <h1>
+                <span className="title-one-home">SURE PAWS</span>
+                <br />
+                </h1>
+                <span className="title-two-home">
+                  Pioneros en la región en la identificación de mascotas y objetos con la
+                  tecnología QR{' '}
+                </span>
+                
+              
+            </div>
+
+            <div className="showcase-img-home">
+              <img className="img-home" src={huellas3} alt="" />
+            </div>
           </div>
-          <div className="showcase-img">
-            <img src={huella} alt="showcase"/>
-            
-          </div>        
-          
         </div>
-      </div>
-    </section>
-      </div>
+      </section>
+     
     </>
   )
 }

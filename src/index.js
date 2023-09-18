@@ -12,6 +12,13 @@ import PanelMascota from './routes/PanelMascota/PanelMascota'
 import PanelObjeto from './routes/PanelObjeto/PanelObjeto'
 import { AuthProvider } from './contexts/AuthContext'
 import Home from './routes/Home/Home'
+import Perfil from './routes/Perfil/Perfil'
+import FormPerfil from './components/Perfil/FormPerfil'
+import { MascotaView } from './routes/PanelMascota/MascotaView'
+import { ObjetoView } from './routes/PanelObjeto/ObjetoView'
+import Aplicacion from './routes/Home/Aplicacion'
+import Nosotros from './routes/Home/Nosotros'
+import Contacto from './routes/Home/Contacto'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +30,18 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: '/nosotros',
+        element: <Nosotros/>,
+      },
+      {
+        path: '/aplicacion',
+        element: <Aplicacion/>,
+      },
+      {
+        path: '/contacto',
+        element: <Contacto/>,
+      },
+      {
         path: '/signup',
         element: <SignUp />,
       },
@@ -31,16 +50,32 @@ const router = createBrowserRouter([
         element: <SignIn />,
       },
       {
+        path: '/mascotas/:id',
+        element: <MascotaView />,
+      },
+      {
+        path: '/objetos/:id',
+        element: <ObjetoView />,
+      },
+      {
         path: '/',
         element: <ProtectedRoute />,
         children: [
           {
             path: '/mascotas',
             element: <PanelMascota />,
-          },
+          },          
           {
             path: '/objetos',
             element: <PanelObjeto />,
+          },
+          {
+            path: '/perfil',
+            element: <Perfil />,
+          },
+          {
+            path: '/formperfil',
+            element: <FormPerfil />,
           },
         ],
       },

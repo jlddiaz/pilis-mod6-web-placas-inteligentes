@@ -4,13 +4,14 @@ import Objeto from './Objeto'
 const Objetos = ({ objetos }) => {
   console.log(objetos)
   return (
-    <div className="objetos">
+    <div className="container__card">
       {objetos? (
         objetos.map((objeto) => (
           <Objeto
             key={objeto.idObjeto}
             nombre={objeto.nombre}
             observaciones={objeto.observaciones}
+            foto={objeto.foto}
           />
         ))
       ) : (

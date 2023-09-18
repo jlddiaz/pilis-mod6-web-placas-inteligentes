@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  float: right;
+  float: center;
   
 }
 
@@ -26,7 +26,8 @@ body {
   padding: 70px 40px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   position: relative;
-  float: right;
+  float: center;
+  top: 50px;
 }
 
 .title {
@@ -36,7 +37,11 @@ body {
   height: 80%;
   width: 80%;
   
-  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 46Px;
+
+  font-size: 20px;
   margin-bottom: 50px;
   margin-left: 0;
   color: #595250;
@@ -84,7 +89,8 @@ body {
 }
 
 .submitBtn {
-  display: block;
+  display: flex;
+  float: right;
   margin-left: auto;
   padding: 15px 30px;
   border: none;
@@ -99,6 +105,23 @@ body {
 .submitBtn:hover {
   background-color: #595250;
   transform: translateY(-2px);
+}
+.btnCancel {
+  display: flex;
+  float: left;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: 1px solid #d75551;
+  background-color: #fbfbf5;
+  color: #d75551;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.btnCancel:hover{
+  background-color: #d75551;
+  color: #fbfbf5;
 }
 .input:focus + .label {
   top: -7px;
@@ -119,4 +142,18 @@ body {
 
 .input:focus {
   border: 2px solid #d75551;
+}
+.alert-err {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: #f5c6cb;  
+  border-color: #f5c6cb;  
+  width: 90%;
+}
+.error{
+  color: #721c24;
+  font-size: 11px;
 }
