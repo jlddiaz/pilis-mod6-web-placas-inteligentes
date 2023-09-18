@@ -31,7 +31,7 @@ const SignUp = () => {
     <div className="signupFrm">
       <div className="wrapper">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="title">Registar</h1>
+          <h1 className="title">Registrate para crear tu cuenta.</h1>
           {mostrarErr && (
             <div className="alert-err">
               {errores &&

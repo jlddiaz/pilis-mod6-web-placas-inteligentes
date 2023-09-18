@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50vh;
-  float: right;
+  float: center;
   
 }
 
@@ -26,7 +26,7 @@ body {
   padding: 70px 40px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   position: relative;
-  float: right;
+  float: center;
   top: 50px;
 }
 
@@ -37,6 +37,10 @@ body {
   height: 80%;
   width: 80%;
   
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 46Px;
+
   font-size: 20px;
   margin-bottom: 50px;
   margin-left: 0;

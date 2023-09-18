@@ -17,6 +17,7 @@ import FormPerfil from './components/Perfil/FormPerfil'
 import { MascotaView } from './routes/PanelMascota/MascotaView'
 import { ObjetoView } from './routes/PanelObjeto/ObjetoView'
 import Aplicacion from './routes/Home/Aplicacion'
+import Nosotros from './routes/Home/Nosotros'
 import Contacto from './routes/Home/Contacto'
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/nosotros',
+        element: <Nosotros/>,
       },
       {
         path: '/aplicacion',
