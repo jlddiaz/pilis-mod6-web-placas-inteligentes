@@ -14,7 +14,7 @@ const Contacto = () => {
           <div className="container-contacto">
             <div className="showcase-text-contacto">
             <h1>
-                  <span class="title-one-contacto"> Póngase en contacto con nosotros</span>
+                  <span className="title-one-contacto"> Póngase en contacto con nosotros</span>
                   </h1>
                   <p> 
                   Por favor, siéntase libre de buscar las respuestas en nuestra Página, 
@@ -29,17 +29,17 @@ De lo contrario, contáctenos haciendo clic en los íconos de nuestras redes soc
                   </a>
 
                   <a href="http://www.twitter.com" target="_blank">
-                    <img class="imagen_social" src={twitter} />{' '}
+                    <img className="imagen_social" src={twitter} />{' '}
                   </a>
 
                   <a href="http://www.facebook.com" target="_blank">
-                    <img class="imagen_social" src={facebook} />{' '}
+                    <img className="imagen_social" src={facebook} />{' '}
                   </a>
                   <a href="https://wa.me/3884130325" target="_blank">
-                    <img class="imagen_social" src={imagen_whatsapp} />{' '}
+                    <img className="imagen_social" src={imagen_whatsapp} />{' '}
                     </a>
                     <a href="https://ar.linkedin.com/" target="_blank">
-                    <img class="imagen_social" src={imagen_linkedin} />{' '}
+                    <img className="imagen_social" src={imagen_linkedin} />{' '}
                   </a>
                 </div>
                 <span className="sociales-text">
