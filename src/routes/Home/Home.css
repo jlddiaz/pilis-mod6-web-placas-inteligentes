@@ -7,6 +7,7 @@
   align-items: center;
   padding: 5px;
   padding-bottom: 0px;
+
  
 }
 
@@ -51,7 +52,7 @@ max-height: 70%;
  /**Carrusel */
  .swiper-container {
 
-  height: 80vh;
+  height: 70vh;
   }
   .slide-item {
     margin: 10px;
@@ -62,9 +63,11 @@ max-width: 80%;
 object-fit: cover;
 max-height: 80%;
 
+border-radius: 10px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .swiper-pagination > .swiper-pagination-bullet {
-    background-color:  #f3f0ef ;
+    background-color:  #d75551 ;
     opacity: 0.7;
     color: #d75551;
     padding: 8px;

@@ -43,8 +43,10 @@ max-height: 70%;
 
 .showcase-text-contacto .title-two-contacto {
   color: #d75551 ;
-  font-weight: 400;
-  font-size: 50px;
+  font-weight: 200;
+  font-size: 40px;
+  text-transform: uppercase;
+   
 }
 
 
