@@ -4,7 +4,7 @@ const Mascota = ({
   nombre,
   sexo,
   vacunas,
-  fechaNacimiento,
+  edad,
   foto,
   observaciones,
   perfil,

@@ -18,7 +18,7 @@ export const MascotaView = () => {
         nombre={mascota.nombre}
         sexo={mascota.sexo}
         vacunas={mascota.vacunas}
-        mascota={mascota.fechaNacimiento}
+        mascota={mascota.edad}
         foto={mascota.foto}
         observaciones={mascota.observaciones}
         perfil={mascota.perfil}
