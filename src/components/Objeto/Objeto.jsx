@@ -1,4 +1,7 @@
 import './Objeto.css'
+import imagen_whatsapp from '../../assets/image/whatsapp.png'
+import facebook from '../../assets/image/facebook.png'
+import instagram from '../../assets/image/instagram.png'
 import objetoDefault from '../../assets/image/objetoDefault.jpg'
 const Objeto = ({ nombre, observaciones, foto, perfil }) => {
   const isValidUrl = (urlString) => {
@@ -25,6 +28,24 @@ const Objeto = ({ nombre, observaciones, foto, perfil }) => {
           <b>Observaciones: </b>
           {observaciones}
         </p>
+
+        <div className="contacto-responsable">
+
+<a href="http://www.instagram.com" target="_blank">
+  <img className="imagen_social" src={instagram} />{' '}
+</a>
+
+<a href="http://www.facebook.com" target="_blank">
+  <img className="imagen_social" src={facebook} />{' '}
+</a>
+<a href={`https://wa.me/3884130325`}  target="_blank">
+  <img className="imagen_social" src={imagen_whatsapp} />{' '}
+  </a>
+ 
+
+</div>
+
+
         {perfil && (
           <>
             <p>

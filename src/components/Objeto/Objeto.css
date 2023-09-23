@@ -62,3 +62,21 @@
 .container-img-objeto{
   padding: 10px;
 }
+
+.contacto-responsable{
+  display: flex;
+  top: 30px;
+  justify-content: center; 
+}
+
+.imagen_social
+{
+max-width:40px;
+max-height:40px;
+float: right; 
+margin-top: 10px;
+margin-bottom: 50px;
+margin-right: 20px;
+
+
+}
