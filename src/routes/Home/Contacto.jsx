@@ -14,8 +14,9 @@ const Contacto = () => {
           <div className="container-contacto">
             <div className="showcase-text-contacto">
             <h1>
-                  <span className="title-one-contacto"> Póngase en contacto con nosotros</span>
+                  <span className="title-one-contacto"> Póngase en contacto con</span>
                   </h1>
+                  <span className="title-two-contacto">nosotros</span>
                   <p> 
                   Por favor, siéntase libre de buscar las respuestas en nuestra Página, 
                   lo más probable es que su consulta sea resuelta de inmediato.

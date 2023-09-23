@@ -9,7 +9,7 @@ const Nosotros = () => {
           <div className="container-nosotros">
             <div className="showcase-text-nosotros">
             <h1>
-                <span className="title-one-nosotros">SURE PAWS</span>
+                <span className="title-one-nosotros">CUVER</span>
                 <br />
                 </h1>
               <p>
