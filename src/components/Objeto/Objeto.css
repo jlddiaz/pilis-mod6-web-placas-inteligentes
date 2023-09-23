@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
-
-
 .card-objeto {
   margin: 40px;
   position: relative;
@@ -10,13 +7,11 @@
   max-height: 350px;
   box-shadow: 0 40px 60px -6px #595250;
 
-
   width: 250px;
-  height: 280px;
+  height: 500px;
   position: relative;
   transform-style: preserve-3d;
   transition: all 600ms;
-
 }
 
 .card-objeto-title {
@@ -28,10 +23,8 @@
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   font-size: 2.1rem;
-    margin: 0px 0 20px 0;
-
-
-
+  margin: 0px 0 20px 0;
+  text-transform: uppercase;
 }
 
 .card-objeto img {
@@ -51,7 +44,7 @@
   opacity: 0;
   padding: 18px 8%;
   background-color: #fbfbf5;
- 
+
   transition: 0.8s ease;
 }
 
@@ -59,24 +52,21 @@
   opacity: 1;
   height: 100%;
 }
-.container-img-objeto{
+.container-img-objeto {
   padding: 10px;
 }
 
-.contacto-responsable{
+.contacto-responsable {
   display: flex;
   top: 30px;
-  justify-content: center; 
+  justify-content: center;
 }
 
-.imagen_social
-{
-max-width:40px;
-max-height:40px;
-float: right; 
-margin-top: 10px;
-margin-bottom: 50px;
-margin-right: 20px;
-
-
+.imagen_social {
+  max-width: 40px;
+  max-height: 40px;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-right: 20px;
 }

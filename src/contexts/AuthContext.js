@@ -4,7 +4,8 @@ import { getPerfilByIdUsuario } from '../services/perfil.service'
 const AuthContext = createContext({
   isAuthenticated: false,
   idUsuario: '',
-  idPerfil:'',
+  idPerfil: '',
+  perfil: {},
   changeisAthenticated: (valor) => {},
   getAccessToken: () => {},
   saveUser: (userData) => {},
@@ -16,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   const [accessToken, setAccessToken] = useState('')
   const [idUsuario, setIdUsuario] = useState()
   const [idPerfil, setIdPerfil] = useState(null)
+  const [perfil, setPerfil] = useState(null)
   // const [refreshToken, setRefreshToken] = useState('')
 
   function changeisAthenticated(valor) {
@@ -39,8 +41,12 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('token', JSON.stringify(userData.refreshToken))
     setIsAuthtenticated(true)
     setIdUsuario(userData.idUsuario)
-    const perfil = await getPerfilByIdUsuario(userData.idUsuario)
-    if (perfil) setIdPerfil(perfil.idPerfil)
+    await getPerfilByIdUsuario(userData.idUsuario)
+      .then((per) => {
+        setIdPerfil(per.idPerfil)
+        setPerfil(per)
+      })
+      .catch((err) => console.warn(err))
   }
   return (
     <AuthContext.Provider
@@ -52,6 +58,7 @@ export const AuthProvider = ({ children }) => {
         changeisAthenticated,
         saveUser,
         getRefreshToken,
+        perfil,
       }}
     >
       {children}

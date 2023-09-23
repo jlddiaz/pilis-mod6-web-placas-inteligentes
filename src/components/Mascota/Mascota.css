@@ -1,44 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
-.titleFront{
-  color:#fff;
-  text-transform:uppercase;
+.titleFront {
+  color: #fff;
+  text-transform: uppercase;
 }
 
-body{
-    background: (255, 255, 255);
+body {
+  background: (255, 255, 255);
 }
 
-.container__card{
-    max-width: 1200px;
-    margin: auto;
-    margin-top: 15px;
-    perspective: 900px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.container__card {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 15px;
+  perspective: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-
-
-.card__father{
+.card__father {
   margin: 10px;
   perspective: 1000px;
 }
 
-.card__father:hover .card{
+.card__father:hover .card {
   transform: rotateY(180deg);
 }
 
-
-.card{
+.card {
   width: 250px;
   height: 280px;
   position: relative;
@@ -46,14 +43,13 @@ body{
   transition: all 600ms;
 }
 
-.card__front{
+.card__front {
   background-size: cover;
   background-position: center;
 }
 
-
 .card__front,
-.card__back{
+.card__back {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -64,12 +60,12 @@ body{
   border-radius: 20px;
 }
 
-.card__back{
+.card__back {
   transform: rotateY(180deg);
   background: white;
 }
 
-.body__card_front{
+.body__card_front {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -81,44 +77,44 @@ body{
   transform: translateZ(60px);
 }
 
-.bg{
+.bg {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
 }
 
-.body__card_back{
+.body__card_back {
   margin-top: 20px;
   padding: 30px;
   text-align: center;
   transform: translateZ(60px);
 }
 
-.body__card_back p{
+.body__card_back p {
   margin-top: 15px;
   font-size: 14px;
   text-align: left;
 }
 
-.body__card_back input{
+.body__card_back input {
   padding: 10px 40px;
   margin-top: 30px;
   font-size: 16px;
   cursor: pointer;
   border: none;
   color: white;
-  background: #9867C5;
-  box-shadow: 1px 1px 30px -5px #9867C5;
+  background: #9867c5;
+  box-shadow: 1px 1px 30px -5px #9867c5;
   border-radius: 10px;
   transition: box-shadow 600ms;
 }
 
-.body__card_back input:hover{
-  box-shadow: 1px 1px 30px 0px #9867C5;
+.body__card_back input:hover {
+  box-shadow: 1px 1px 30px 0px #9867c5;
 }
 .del:hover {
   cursor: pointer;
@@ -131,7 +127,6 @@ body{
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
-
 
 .cards {
   width: 100%;
@@ -162,10 +157,8 @@ body{
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   font-size: 2.1rem;
-    margin: 0px 0 20px 0;
-
-
-
+  margin: 0px 0 20px 0;
+  text-transform: uppercase;
 }
 
 .card img {
@@ -185,7 +178,7 @@ body{
   opacity: 0;
   padding: 18px 8%;
   background-color: #fbfbf5;
- 
+
   transition: 0.8s ease;
 }
 

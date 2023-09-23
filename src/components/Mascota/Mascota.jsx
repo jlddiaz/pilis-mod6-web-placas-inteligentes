@@ -3,7 +3,7 @@ import mascotaDefault from '../../assets/image/mascotasdefault.jpg'
 import imagen_whatsapp from '../../assets/image/whatsapp.png'
 import facebook from '../../assets/image/facebook.png'
 import instagram from '../../assets/image/instagram.png'
-
+import { useAuth } from '../../contexts/AuthContext'
 
 const Mascota = ({
   nombre,
@@ -14,17 +14,14 @@ const Mascota = ({
   observaciones,
   perfil,
 }) => {
+  const auth = useAuth()
   const isValidUrl = (urlString) => {
     try {
-      
       return Boolean(new URL(urlString))
     } catch (e) {
       return false
     }
   }
-  
-
-  
 
   return (
     <div className="card">
@@ -37,27 +34,17 @@ const Mascota = ({
         )}
       </div>
       <div className="card-desc">
-        <p><b>Sexo: </b>{sexo}</p>
-        <p><b>Vacunas: </b>{vacunas}</p>
-        <p><b>Observaciones:</b> {observaciones}</p>
-
-        <div className="contacto-responsable">
-
-                  <a href="http://www.instagram.com" target="_blank">
-                    <img className="imagen_social" src={instagram} />{' '}
-                  </a>
-                 
-                  <a href="http://www.facebook.com" target="_blank">
-                    <img className="imagen_social" src={facebook} />{' '}
-                  </a>
-                  <a href={`https://wa.me/3884130325`}  target="_blank">
-                    <img className="imagen_social" src={imagen_whatsapp} />{' '}
-                    </a>
-                   
-
-                </div>
-           
-
+        <p>
+          <b>Sexo: </b>
+          {sexo}
+        </p>
+        <p>
+          <b>Vacunas: </b>
+          {vacunas}
+        </p>
+        <p>
+          <b>Observaciones:</b> {observaciones}
+        </p>
 
         {/* <p>En caso de encontrar mi mascota, agradeceré me contactes.</p> */}
         {perfil && (
@@ -65,19 +52,31 @@ const Mascota = ({
             <p>
               <b>Dueño estoy:</b> {perfil.nombre} {perfil.apellido}
             </p>
-            <p><b>Telefono: </b>{perfil.telefono}</p>
-            <p><b>Dirección: </b>{perfil.direccion}</p>
-
-
-
-
-
-           
-
-
-
+            <p>
+              <b>Telefono: </b>
+              {perfil.telefono}
+            </p>
+            <p>
+              <b>Dirección: </b>
+              {perfil.direccion}
+            </p>
           </>
         )}
+      </div>
+      <div className="contacto-responsable">
+        <a href={auth.perfil.instagram} target="_blank" rel="noreferrer">
+          <img className="imagen_social" src={instagram} alt="instagram" />
+        </a>
+        <a href={auth.perfil.facebook} target="_blank" rel="noreferrer">
+          <img className="imagen_social" src={facebook} alt="facebook" />
+        </a>
+        <a
+          href={`https://wa.me/${auth.perfil.telefono}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img className="imagen_social" src={imagen_whatsapp} alt="whatsapp" />
+        </a>
       </div>
     </div>
   )

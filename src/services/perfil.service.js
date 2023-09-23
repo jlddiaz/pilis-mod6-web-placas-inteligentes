@@ -1,8 +1,8 @@
+import { api } from './api'
+
 export const getPerfilByIdUsuario = async (id) => {
   try {
-    const response = await fetch(
-      `http://localhost:3001/api/perfilesByIdUsuario/${id}`
-    )
+    const response = await fetch(`${api.server}/perfilesByIdUsuario/${id}`)
     return response.json()
   } catch {
     throw new Error('could not fetch')
@@ -11,7 +11,7 @@ export const getPerfilByIdUsuario = async (id) => {
 
 export const getPerfilById = async (id, state) => {
   try {
-    const response = await fetch(`http://localhost:3001/api/perfiles/${id}`)
+    const response = await fetch(`${api.server}/perfiles/${id}`)
     if (response.ok) {
       const json = await response.json()
       state(json)
@@ -37,7 +37,7 @@ export const createPerfil = async ({
   idLocalidad,
 }) => {
   try {
-    const response = await fetch(`http://localhost:3001/api/perfiles`, {
+    const response = await fetch(`${api.server}/perfiles`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,10 +71,10 @@ export const updatePerfil = async ({
   instagram,
   idUsuario,
   idLocalidad,
-  idPerfil
+  idPerfil,
 }) => {
   try {
-    const response = await fetch(`http://localhost:3001/api/perfiles/${idPerfil}`, {
+    const response = await fetch(`${api.server}/perfiles/${idPerfil}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -89,7 +89,6 @@ export const updatePerfil = async ({
         foto,
       }),
     })
-
     return response
   } catch {
     throw new Error('could not fetch')

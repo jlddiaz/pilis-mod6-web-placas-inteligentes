@@ -1,17 +1,19 @@
-export const getMascotasByIdPerfil = async(id) => {
-    try {
-        const response = await fetch(`http://localhost:3001/api/mascotasByIdPerfil/${id}`)        
-        return response.json();
-      } catch {
-        throw new Error('could not fetch');
-      }
+import { api } from './api'
+
+export const getMascotasByIdPerfil = async (id) => {
+  try {
+    const response = await fetch(`${api.server}/mascotasByIdPerfil/${id}`)
+    return response.json()
+  } catch {
+    throw new Error('could not fetch')
+  }
 }
 
-export const getMascotasById = async(id) => {
+export const getMascotasById = async (id) => {
   try {
-      const response = await fetch(`http://localhost:3001/api/mascotas/${id}`)      
-      return response.json();
-    } catch {
-      throw new Error('could not fetch');
-    }
+    const response = await fetch(`${api.server}/mascotas/${id}`)
+    return response.json()
+  } catch {
+    throw new Error('could not fetch')
+  }
 }
